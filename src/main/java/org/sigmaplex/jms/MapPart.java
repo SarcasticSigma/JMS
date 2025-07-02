@@ -1,4 +1,4 @@
-package org.sigmaplex;
+package org.sigmaplex.jms;
 
 import java.io.File;
 

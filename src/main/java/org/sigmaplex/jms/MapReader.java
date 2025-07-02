@@ -1,10 +1,10 @@
-package org.sigmaplex;
+package org.sigmaplex.jms;
 
 import java.io.File;
 import java.util.ArrayList;
 
 public class MapReader {
-    final String MAP_PATH = "C:\\Projects\\Java\\JMS\\src\\main\\resources\\mapdata\\data\\mp\\Server_79fc0cc3~c72c~40ab~89b7~da29e48a592f\\overworld\\day";
+    final String MAP_PATH = "C:\\Users\\Slime\\AppData\\Roaming\\PrismLauncher\\instances\\TerraFirmaGreg-Modern\\minecraft\\journeymap\\data\\mp\\Minecraft~Server_79fc0cc3~c72c~40ab~89b7~da29e48a592f\\overworld\\day";
     File directory = new File(MAP_PATH);
 
     public ArrayList<MapPart> readMaps() {

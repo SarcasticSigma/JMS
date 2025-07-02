@@ -1,4 +1,5 @@
-package org.sigmaplex;
+package org.sigmaplex.jms;
+
 
 
 /*
