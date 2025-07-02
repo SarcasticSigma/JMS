@@ -1,0 +1,10 @@
+Get world id so that the client knows where to look for the map files
+give every image a hash and add these to a hashmap
+
+send hashmaps to server
+compare server map to client map (will have to be done sequentially)
+if there is a difference then send the corresponding mca and png file from the client
+
+send changes back to the client
+
+wait for next update
