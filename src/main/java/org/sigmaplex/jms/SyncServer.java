@@ -52,11 +52,12 @@ public class SyncServer {
     /*
         TODO: Implement the below pseudocode
 
+        Files will be wrapped into zip files for sending.
+
         The client posts a list of their file hashes to the server, if there are any missing or inequal, the server responds with:
 
             {"type": "desync", "files": [{filename: '0,0.png', type:"map"}, {filename: '0.0.mca', type="cache"}]}
             The client closes the connection.
-
 
             The client should then open a connection to the dataContext:GET, and download all of inequal files, the files in one request.
 
