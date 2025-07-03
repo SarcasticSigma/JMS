@@ -1,6 +1,5 @@
 package org.sigmaplex.jms;
 
-import info.journeymap.shaded.org.eclipse.jetty.util.security.Credential;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
