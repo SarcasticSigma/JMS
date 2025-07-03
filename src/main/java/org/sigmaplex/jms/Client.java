@@ -12,14 +12,5 @@ import java.sql.Statement;
 
 public class Client {
 
-    public Statement createServer(){
-        try (
-                Connection connection = DriverManager.getConnection("jdbc:sqlite:map.db");
-                Statement command = connection.createStatement()
-        ) {
-        } catch (SQLException e) {
-            System.err.println(e.getMessage());
-        }
-        return null;
-    }
+
 }

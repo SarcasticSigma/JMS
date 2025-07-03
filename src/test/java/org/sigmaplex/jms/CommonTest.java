@@ -3,10 +3,10 @@ package org.sigmaplex.jms;
 import org.junit.jupiter.api.Test;
 
 
-public class ClientTest {
+public class CommonTest {
     @Test
     public void createServerTest(){
-        Client c = new Client();
+        Common c = new Common();
         c.createServer();
     }
 }
