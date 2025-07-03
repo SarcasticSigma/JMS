@@ -130,6 +130,7 @@ repositories {
     // flatDir {
     //     dir 'libs'
     // }
+    flatDir{dirs "lib"}
     maven{
         url'https://www.cursemaven.com'
 
@@ -149,14 +150,13 @@ dependencies {
     // compileOnly fg.deobf("mezz.jei:jei-${mc_version}-common-api:${jei_version}")
     //compileOnly fg.deobf("mezz.jei:jei-${mc_version}-forge-api:${jei_version}")
     // runtimeOnly fg.deobf("mezz.jei:jei-${mc_version}-forge:${jei_version}")
-    compileOnly fg.deobf("curse.maven:journeymap-32274:5789363")
     runtimeOnly fg.deobf("curse.maven:journeymap-32274:5789363")
     // Example mod dependency using a mod jar from ./libs with a flat dir repository
     // This maps to ./libs/coolmod-${mc_version}-${coolmod_version}.jar
     // The group id is ignored when searching -- in this case, it is "blank"
     // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
-
+    implementation files("lib/sqlite-jdbc-3.50.2.0.jar")
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
