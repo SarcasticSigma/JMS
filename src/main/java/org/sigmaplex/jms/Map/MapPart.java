@@ -1,4 +1,4 @@
-package org.sigmaplex.jms;
+package org.sigmaplex.jms.Map;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

@@ -1,8 +1,9 @@
-package org.sigmaplex.jms;
+package org.sigmaplex.jms.Map;
 
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.fml.loading.FMLPaths;
 import org.checkerframework.checker.units.qual.A;
+import org.sigmaplex.jms.MapPart;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;

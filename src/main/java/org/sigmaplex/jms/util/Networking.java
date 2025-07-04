@@ -1,5 +1,7 @@
-package org.sigmaplex.jms;
+package org.sigmaplex.jms.util;
 
+
+import org.sigmaplex.jms.Server;
 
 public class Networking {
     String getWorldId(){

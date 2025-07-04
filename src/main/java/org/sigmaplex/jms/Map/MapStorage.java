@@ -1,4 +1,4 @@
-package org.sigmaplex.jms;
+package org.sigmaplex.jms.Map;
 
 
 import java.sql.DriverManager;
