@@ -157,6 +157,7 @@ dependencies {
     // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
     testImplementation 'org.junit.jupiter:junit-jupiter:5.10.2'
     implementation files("lib/sqlite-jdbc-3.50.2.0.jar")
+    implementation 'org.xerial:sqlite-jdbc:3.43.2.0'
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
@@ -200,3 +201,12 @@ tasks.named('jar', Jar).configure {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
+/*
+doLast{
+    def sqlClassLoader = Sql.classLoader
+    configurations.jdbc.each { sqlClassLoader.addURL it.toURI().toURL() }
+
+    def driver = 'org.sqlite.Driver'
+}
+
+ */
