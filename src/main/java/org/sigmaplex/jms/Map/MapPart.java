@@ -17,6 +17,8 @@ public class MapPart {
     private static final String IMAGE_FORMAT = "png";
     private int x;
     private int y;
+    private MAPTYPE mapType;
+    private LEVELTYPE levelType;
     public TYPE IMAGE = TYPE.IMAGE;
     public TYPE CACHE = TYPE.CACHE;
     File imageFile;
@@ -26,8 +28,17 @@ public class MapPart {
         IMAGE,
         CACHE
     }
+    public enum LEVELTYPE {
+        OVERWORLD
+    }
+    public enum MAPTYPE {
+        DAY
+    }
 
     public MapPart(int x, int y, Path minecraftDirectory, String server) {
+        this.levelType = LEVELTYPE.OVERWORLD;
+        this.mapType = MAPTYPE.DAY;
+
         String imageLocation = String.format("%s/journeymap/data/mp/%s/overworld/day/%d,%d.png", minecraftDirectory, server, x, y);
         String cacheLocation = String.format("%s/journeymap/data/mp/%s/overworld/cache/r.%d.%d.mca", minecraftDirectory, server, x, y);
         this.imageFile = new File(imageLocation);
@@ -35,16 +46,17 @@ public class MapPart {
         constructorChecks();
     }
 
-
-    public MapPart(int x, int y, String server) {
-        this(x, y, FMLPaths.GAMEDIR.get(), server);
-    }
-
-    // This is for testing, not intended for public usage.
     public MapPart(File image, File cache) {
+        this.levelType = LEVELTYPE.OVERWORLD;
+        this.mapType = MAPTYPE.DAY;
+
         this.imageFile = image;
         this.cacheFile = cache;
         constructorChecks();
+    }
+
+    public MapPart(int x, int y, String server) {
+        this(x, y, FMLPaths.GAMEDIR.get(), server);
     }
 
     private void constructorChecks(){
@@ -116,17 +128,17 @@ public class MapPart {
 
 
     public String getCachename() {
-        return this.imageFile.getPath();
+        return this.cacheFile.getName();
     }
 
 
-    public String getLevelname() {
-        return "";
+    public String getMapType() {
+        // Only day is currently supported
+        return this.mapType.name();
     }
-
-
-    public String getMaptype() {
-        return "";
+    public String getLevelType() {
+        // Only overworld is currently supported
+        return this.levelType.name();
     }
 
 

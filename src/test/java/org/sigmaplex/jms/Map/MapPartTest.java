@@ -29,17 +29,20 @@ class MapPartTest {
 
     @Test
     void getMapname() {
+        assertEquals("0,5.png", mapPart.getMapname());
     }
 
     @Test
     void getCachename() {
+        assertEquals("r.0.5.mca", mapPart.getCachename());
     }
 
     @Test
-    void getLevelname() {
+    public void getLevelname(){
+        assertEquals("OVERWORLD", mapPart.getLevelType());
     }
-
     @Test
-    void getMaptype() {
+    public void getMaptype(){
+        assertEquals("DAY", mapPart.getMapType());
     }
 }
