@@ -13,11 +13,12 @@ class SyncServerTest {
 
     @Test
     public void testServerStarts() throws IOException {
-        new SyncServer();
-        assertEquals(200, httpRequest(new URL("http://localhost:8195/jms/compare"), "POST"));
-        assertEquals(200, httpRequest(new URL("http://localhost:8195/jms/compare"), "GET"));
-        assertEquals(200, httpRequest(new URL("http://localhost:8195/jms/data"), "GET"));
-        assertEquals(200, httpRequest(new URL("http://localhost:8195/jms/data"), "POST"));
+        int testPort = 8195;
+        new SyncServer(testPort);
+        assertEquals(200, httpRequest(new URL(String.format("http://localhost:%d/jms/compare", testPort)), "POST"));
+        assertEquals(200, httpRequest(new URL(String.format("http://localhost:%d/jms/compare", testPort)), "GET"));
+        assertEquals(200, httpRequest(new URL(String.format("http://localhost:%d/jms/data", testPort)), "GET"));
+        assertEquals(200, httpRequest(new URL(String.format("http://localhost:%d/jms/data", testPort)), "POST"));
     }
 
 

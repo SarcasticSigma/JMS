@@ -26,10 +26,10 @@ public class Common {
                         CREATE TABLE Maps(
                             mapname varchar NOT NULL,
                             cachename varchar ,
-                            levelname varchar NOT NULL, 
+                            levelname varchar NOT NULL,
                             maptype varchar NOT NULL,
                             hash varchar NOT NULL,
-                            CONSTRAINT PK_Maps PRIMARY KEY (mapname,levelname,maptype))        
+                            CONSTRAINT PK_Maps PRIMARY KEY (mapname,levelname,maptype))
                     """);
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -41,7 +41,7 @@ public class Common {
         // String s = FMLPaths.GAMEDIR.get() + "/world/data/jmssync.zip";
         File zip = new File("run/world/data/jmssync.zip");
         try (
-                ZipOutputStream outputStream = new ZipOutputStream(new FileOutputStream(zip));
+                ZipOutputStream outputStream = new ZipOutputStream(new FileOutputStream(zip))
         ) {
             outputStream.putNextEntry(new ZipEntry(map.getName()));
             outputStream.putNextEntry(new ZipEntry(region.getName()));

@@ -16,8 +16,8 @@ public class WorldIdParser {
     }
 
     public String getId() {
-        CompoundTag tag = null;
-        String uuid = null;
+        CompoundTag tag;
+        String uuid;
         try {
             tag = NbtIo.readCompressed(this.target);
             tag = tag.getCompound("data");

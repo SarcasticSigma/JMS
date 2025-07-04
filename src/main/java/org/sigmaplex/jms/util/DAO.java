@@ -1,7 +1,6 @@
 package org.sigmaplex.jms.util;
 
 import org.sigmaplex.jms.Map.MapPart;
-import javax.xml.transform.Result;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,7 +15,7 @@ public class DAO {
 
 
     public void create(MapPart m) {
-        try (Connection c = DriverManager.getConnection(connectionString);) {
+        try (Connection c = DriverManager.getConnection(connectionString)) {
             PreparedStatement p = c.prepareStatement("INSERT INTO maps (mapname, cachename, levelname, maptype, hash) VALUES (?, ?, ?, ?, ?)");
 
             p.setString(1, m.getMapname());
@@ -37,8 +36,8 @@ public class DAO {
     }
 
     public ArrayList<HashMap<String, String>> list(){
-        ArrayList<HashMap<String, String>> results = null;
-        try (Connection c = DriverManager.getConnection(connectionString);) {
+        ArrayList<HashMap<String, String>> results;
+        try (Connection c = DriverManager.getConnection(connectionString)) {
             PreparedStatement p = c.prepareStatement("SELECT * FROM maps");
             results = structureResults(p.executeQuery());
         } catch (SQLException e) {
@@ -53,7 +52,7 @@ public class DAO {
 
     /* Deletes all the data from the database */
     public void truncate(){
-          try (Connection c = DriverManager.getConnection(connectionString); Statement s = c.createStatement()) {
+          try (Connection c = DriverManager.getConnection(connectionString)) {
             PreparedStatement p = c.prepareStatement("DELETE FROM maps");
             p.executeUpdate();
         } catch (SQLException e) {

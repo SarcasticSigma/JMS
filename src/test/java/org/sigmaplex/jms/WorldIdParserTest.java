@@ -11,7 +11,7 @@ class WorldIdParserTest {
     @Test
     void testGetId() {
         String id = new WorldIdParser(Path.of("src/test/resources/minecraft/")).getId();
-        assertEquals("0b310c83-1c78-4713-98a4-3214691b9c86", id.toString());
+        assertEquals("0b310c83-1c78-4713-98a4-3214691b9c86", id);
     }   @Test
     void testGetIdMissingFile() {
         assertThrows(RuntimeException.class, () -> new WorldIdParser(Path.of("")).getId());

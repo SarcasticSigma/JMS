@@ -11,30 +11,7 @@ import javax.imageio.ImageIO;
  * Merges map regions into another using a bitmap to copy the non-transparent regions filled regions i unfilled regions to filled regions
  * */
 public class MapMerger {
-    public MapMerger() {
-        ArrayList<MapPart> images = new ArrayList<>();
-        File journeyMapServers = new File(FMLPaths.GAMEDIR + "\\journeymap\\data\\mp\\");
-        if (journeyMapServers.exists()) {
-            File[] serverDirs = journeyMapServers.listFiles();
-            for (File server : serverDirs) {
-                File mapDir = new File(server.getPath() + "\\overworld\\day");
-                File[] parts = mapDir.listFiles((dir, name) -> name.endsWith(".png"));
-
-                assert parts != null;
-                for (File part : parts) {
-//                    images.add(new MapPart(part));
-                }
-            }
-        }
-
-        int merged = 0;
-        try {
-            ImageIO.read(new File(""));
-            merged = 1;
-        } catch (IOException ignored) {
-        }
-    }
-
+    public MapMerger() {}
 
     public MapPart merge(ArrayList<MapPart> images) {
         MapPart result = null;

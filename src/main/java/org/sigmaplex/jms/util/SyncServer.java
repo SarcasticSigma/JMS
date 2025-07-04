@@ -15,7 +15,7 @@ public class SyncServer {
         this(Config.port);
     }
 
-    SyncServer(int port) {
+    public SyncServer(int port) {
         try {
             HttpServer s = HttpServer.create();
             s.bind(new InetSocketAddress("0.0.0.0", port), 0);
