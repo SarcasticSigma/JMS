@@ -32,7 +32,8 @@ public class Common {
     }
     //Could be unsafe
     public static void addMap(String fileName,String levelName, String mapType,String hash){
-        String cacheName = "r."+fileName.replace(',','.');
+        fileName += ".png";
+        String cacheName = "r."+fileName.replace(',','.')+".mca";
         try(Connection c = DriverManager.getConnection(URL);Statement s = c.createStatement()) {
             s.executeUpdate(
                     "insert into Maps " +
