@@ -1,7 +1,5 @@
 package org.sigmaplex.jms;
 
-import net.minecraftforge.fml.loading.FMLPaths;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -38,6 +36,8 @@ public class Common {
 
 
     }
+
+
     //Could be unsafe
     public static void addMap(String fileName,String levelName, String mapType,String hash){
         fileName += ".png";

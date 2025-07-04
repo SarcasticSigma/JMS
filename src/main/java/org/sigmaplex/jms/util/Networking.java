@@ -1,6 +1,5 @@
 package org.sigmaplex.jms.util;
 
-
 import org.sigmaplex.jms.Server;
 
 public class Networking {

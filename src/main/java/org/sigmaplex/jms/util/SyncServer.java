@@ -2,7 +2,6 @@ package org.sigmaplex.jms.util;
 
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpServer;
-
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
@@ -12,7 +11,7 @@ import java.util.Objects;
 public class SyncServer {
     HttpServer server;
 
-    SyncServer() {
+    public SyncServer() {
         this(Config.port);
     }
 

@@ -1,10 +1,9 @@
 package org.sigmaplex.jms;
 
-import net.minecraft.nbt.CompoundTag;
 import org.junit.jupiter.api.Test;
+import org.sigmaplex.jms.util.WorldIdParser;
 
 import java.nio.file.Path;
-import java.util.function.Function;
 
 import static org.junit.jupiter.api.Assertions.*;
 

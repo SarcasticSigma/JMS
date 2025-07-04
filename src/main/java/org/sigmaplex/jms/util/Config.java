@@ -1,10 +1,11 @@
 package org.sigmaplex.jms.util;
 
+import org.sigmaplex.jms.Jms;
+
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
-import org.sigmaplex.jms.Jms;
 
 
 // An example config class. This is not required, but it's a good idea to have one to keep your config organized.

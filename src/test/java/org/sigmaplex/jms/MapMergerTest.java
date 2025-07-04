@@ -1,13 +1,14 @@
 package org.sigmaplex.jms;
 
-import org.junit.jupiter.api.*;
+import org.sigmaplex.jms.Map.MapMerger;
+import org.sigmaplex.jms.Map.MapPart;
 
+import org.junit.jupiter.api.*;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.util.ArrayList;
 
-import static javax.imageio.ImageIO.read;
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -29,11 +30,14 @@ class MapMergerTest {
     @Test
     public void merge(){
         ArrayList<MapPart> images = new ArrayList<>();
-        images.add(new MapPart(new File("src/test/resources/left.png")));
-        images.add(new MapPart(new File("src/test/resources/right.png")));
-        System.out.println(images);
-
-
+        images.add(new MapPart(
+                new File("src/test/resources/minecraft/journeymap/data/mp/Server_79fc0cc3~c72c~40ab~89b7~da29e48a592f/overworld/day/client1/0,6.png"),
+                new File("src/test/resources/minecraft/journeymap/data/mp/Server_79fc0cc3~c72c~40ab~89b7~da29e48a592f/overworld/cache/client1/r.0.6.mca"))
+        );
+        images.add(new MapPart(
+                new File("src/test/resources/minecraft/journeymap/data/mp/Server_79fc0cc3~c72c~40ab~89b7~da29e48a592f/overworld/day/client2/0,6.png"),
+                new File("src/test/resources/minecraft/journeymap/data/mp/Server_79fc0cc3~c72c~40ab~89b7~da29e48a592f/overworld/cache/client2/r.0.6.mca"))
+        );
         MapPart image = this.mm.merge(images);
         try{
             BufferedImage expected = ImageIO.read(new File("src/test/resources/merged.png"));

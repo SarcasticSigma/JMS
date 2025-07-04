@@ -1,17 +1,8 @@
 package org.sigmaplex.jms.Map;
 
-import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.fml.loading.FMLPaths;
-import org.checkerframework.checker.units.qual.A;
-import org.sigmaplex.jms.MapPart;
-
-import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileFilter;
-import java.io.FilenameFilter;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.imageio.ImageIO;
@@ -31,7 +22,7 @@ public class MapMerger {
 
                 assert parts != null;
                 for (File part : parts) {
-                    images.add(new MapPart(part));
+//                    images.add(new MapPart(part));
                 }
             }
         }
@@ -56,8 +47,8 @@ public class MapMerger {
             // Find the unique images (we don't need to iterate over the same image twice)
             HashMap<String, MapPart> uniqueParts = new HashMap<>();
             for (MapPart part : images) {
-                if (!uniqueParts.containsKey(part.getHash())) {
-                    uniqueParts.put(part.getHash(), part);
+                if (!uniqueParts.containsKey(part.getHash(part.IMAGE))) {
+                    uniqueParts.put(part.getHash(part.IMAGE), part);
                 }
             }
 

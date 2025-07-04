@@ -1,11 +1,8 @@
-package org.sigmaplex.jms.Map;
+package org.sigmaplex.jms.util;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtIo;
-import net.minecraftforge.fml.loading.FMLPaths;
-
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.file.Path;
 
@@ -14,7 +11,7 @@ public class WorldIdParser {
     final String filepath = "/world/data/WorldUUID.dat";
     File target;
 
-    WorldIdParser(Path baseDir) {
+    public WorldIdParser(Path baseDir) {
         this.target = new File(baseDir + filepath);
     }
 

@@ -14,7 +14,7 @@ public class MapReader {
             assert files != null;
             for(File file : files){
                 if(file.isFile() && file.getName().endsWith(".png")){
-                    parts.add(new MapPart(file));
+//                    parts.add(new MapPart(file));
                 }
             }
 
