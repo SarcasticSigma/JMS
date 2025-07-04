@@ -42,6 +42,8 @@ public class MapPart {
 
     // This is for testing, not intended for public usage.
     public MapPart(File image, File cache) {
+        this.imageFile = image;
+        this.cacheFile = cache;
         constructorChecks();
     }
 
